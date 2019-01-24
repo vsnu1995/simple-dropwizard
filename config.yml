@@ -7,4 +7,5 @@ logging:
   loggers:
     com.vsnu.project: DEBUG
 
-#swaggerBasePath: http://localhost:9080/swagger
+swagger:
+  resourcePackage: com.vsnu.dropwizard.resources

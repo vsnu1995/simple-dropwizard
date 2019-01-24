@@ -5,6 +5,8 @@ import com.vsnu.dropwizard.resources.HelloWorldResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import io.federecio.dropwizard.swagger.SwaggerBundle;
+import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 
 public class DropwizardProjectApplication extends Application<DropwizardProjectConfiguration> {
 
@@ -19,7 +21,13 @@ public class DropwizardProjectApplication extends Application<DropwizardProjectC
 
     @Override
     public void initialize(final Bootstrap<DropwizardProjectConfiguration> bootstrap) {
-        // TODO: application initialization
+        bootstrap.addBundle(new SwaggerBundle<DropwizardProjectConfiguration>() {
+
+            @Override
+            protected SwaggerBundleConfiguration getSwaggerBundleConfiguration(DropwizardProjectConfiguration configuration) {
+                return configuration.swaggerBundleConfiguration;
+            }
+        });
     }
 
     @Override
