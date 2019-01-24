@@ -1,0 +1,10 @@
+template: Hello, %s!
+
+defaultName: ${DW_DEFAULT_NAME:-Stranger}
+
+logging:
+  level: INFO
+  loggers:
+    com.vsnu.project: DEBUG
+
+#swaggerBasePath: http://localhost:9080/swagger
